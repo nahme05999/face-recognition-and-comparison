@@ -36,4 +36,13 @@ Displays the extracted face image along with the top five most similar faces and
 The code is tested on Windows and Linux using Python 3.9 using Anaconda environment. The demo can be viewed here.
   
 # Getting Started
-write here...
+Install the following packages in advance:
+numpy
+streamlit
+streamlit_webrtc
+Pillow
+opencv-python
+face_recognition
+tensorflow
+mtcnn
+mtcnn-opencv
