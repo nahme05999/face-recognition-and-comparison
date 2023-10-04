@@ -41,6 +41,6 @@ Clone this repository.
 
 Install the required dependencies using pip install -r requirements.txt.
 
-Run the Streamlit app using streamlit run your_app.py.
+Run the Streamlit app using streamlit run ajeebsir_face_rec.py
 
 Feel free to explore and enhance the functionality of this face recognition web application for your specific use case!
