@@ -33,7 +33,7 @@ Performs face recognition.
 Displays the extracted face image along with the top five most similar faces and their similarity score in percentage on the sidebar.
 
 # Compatibility
-The code is tested on Windows OS using Python 2.0. The demo can be viewed here.
+The code is tested on Windows and Linux using Python 3.9 using Anaconda environment. The demo can be viewed here.
   
 # Getting Started
 write here...
