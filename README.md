@@ -3,7 +3,6 @@ This web application leverages the power of face recognition to compare a live w
 
 # Features
 **Face Database Initialization:**
-
 Reads through a series of 40 images.
 Detects faces in each image.
 Computes face encodings.
