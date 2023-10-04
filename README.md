@@ -1,4 +1,4 @@
-# Facial Recognition in Python using OpenCV
+# Facial Recognition Web Application
 This web application leverages the power of face recognition to compare a live webcam stream with a database of 40 known faces. The application is built using Python and popular libraries such as OpenCV, Streamlit, face_recognition, and MTCNN.
 
 # Features
