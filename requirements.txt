@@ -1,0 +1,11 @@
+numpy 
+streamlit 
+streamlit_webrtc 
+Pillow 
+opencv-python 
+face_recognition 
+tensorflow 
+mtcnn 
+mtcnn-opencv
+
+
