@@ -7,7 +7,9 @@ from mtcnn_cv2 import MTCNN
 import face_recognition as fr
 from PIL import Image
 
-#This section reads through the series of 40 images, detects faces in each image, computes their face encodings, and stores the results along with file names. 
+#This section reads through the series of 40 images
+#detects faces in each image, computes their face encodings
+#stores the results along with file names in a cache for speed
 @st.cache_data
 def get_faces_encs():
     faces_encs=[]
@@ -23,7 +25,9 @@ def get_faces_encs():
             continue
     return [faces_encs,file_name]
 
-#Takes the image file, computes its face encoding, compares it with a list of known face encodings, and returns the distances and file names of the top five closest matches    
+#Takes the image file, computes its face encoding
+#compares it with a list of known face encodings
+#returns the distances and file names of the top five closest matches    
 def face_rec(file,faces_encs,file_name):
     img=cv2.imread(file)
     rgb_img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
@@ -38,7 +42,9 @@ def face_rec(file,faces_encs,file_name):
     files=[file_name[i] for i in inx]
     return [dist,files]
 
-#Preparing for face recognition by obtaining face encodings, initializing a variable for recognition data, and creating a face detector using the MTCNN algorithm
+#Preparing for face recognition by obtaining face encodings
+#initializing a variable for recognition data
+#creating a face detector using the MTCNN algorithm
 fen=get_faces_encs()
 rec_data=None
 detector = MTCNN()
@@ -48,7 +54,10 @@ RTC_CONFIGURATION = RTCConfiguration(
     {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
 )
 
-#processes the webcam video frames, detects faces using an object detector, crops a sub-image around the detected face, draws a rectangle around the face in the original image, and returns the modified video frame
+#processes the webcam video frames
+#detects faces using an object detector
+#opencv converts the captured frame into a matrix and mtcnn returns the sub-matrix box of the face
+#draws a rectangle around the face in the original image, and returns the modified video frame
 class VideoProcessor(VideoProcessorBase):
     def __init__(self) -> None:
         self.sub_face=False
@@ -65,7 +74,7 @@ class VideoProcessor(VideoProcessorBase):
         cv2.rectangle(img,(face[0]-20,face[1]-20),(face[0]+face[2]+20,face[1]+face[3]+20),(0,0,255),2)        
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
-#setting up webcam streaming through webrtc
+#Setting up webcam streaming through webrtc
 stream=webrtc_streamer(
     key="WYH",
     mode=WebRtcMode.SENDRECV,
@@ -74,6 +83,10 @@ stream=webrtc_streamer(
     video_processor_factory=VideoProcessor,
     async_processing=True,)
 
+# creates a Streamlit app with a button to trigger face comparison
+# when the button is clicked, it captures the detected face
+# performs face recognition
+# displays the extracted face image along with the top five most similar faces and the similarity score in percentage on the sidebar
 if st.button('Click to compare'):
     cv2.imwrite("face.jpg",stream.video_processor.sub_face)
     rec_data=face_rec('face.jpg',fen[0],fen[1])
