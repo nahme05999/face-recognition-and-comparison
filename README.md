@@ -41,7 +41,7 @@ The code was tested on Windows and Linux using Python 3.9 using Anaconda environ
 Install the required dependencies using pip install -r requirements.txt.
 
 Install streamlit 
-    pip install streamlit
+    /pip install streamlit
 
 navigate to the directory
     cd /Users/[USERNAME]/Downloads/face-recognition-and-comparison-main/
