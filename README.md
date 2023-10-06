@@ -48,12 +48,12 @@ Install streamlit
 
 navigate to the directory
 
-    ```
+    
     cd /Users/[USERNAME]/Downloads/face-recognition-and-comparison-main/
-    ```
+    
 
 run the python script by using streamlit
 
-    ```
+    
     streamlit run /Users/[USERNAME]/Downloads/face-recognition-and-comparison-main/ajeebsir_face_rec.py
-    ```
+    
