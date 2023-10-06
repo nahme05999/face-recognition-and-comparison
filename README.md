@@ -37,10 +37,14 @@ The code was tested on Windows and Linux using Python 3.9 using Anaconda environ
 
   
 # Getting Started
-Clone this repository.
 
 Install the required dependencies using pip install -r requirements.txt.
 
-Run the Streamlit app using streamlit run ajeebsir_face_rec.py
+Install streamlit 
+pip install streamlit
 
-Feel free to explore and enhance the functionality of this face recognition web application for your specific use case!
+navigate to the directory
+cd /Users/[USERNAME]/Downloads/face-recognition-and-comparison-main/
+
+run the python script by using streamlit
+streamlit run /Users/[USERNAME]/Downloads/face-recognition-and-comparison-main/ajeebsir_face_rec.py
