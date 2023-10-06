@@ -42,9 +42,9 @@ Install the required dependencies using pip install -r requirements.txt.
 
 Install streamlit 
 
-    ```
+  
     pip install streamlit
-    ```
+   
 
 navigate to the directory
 
